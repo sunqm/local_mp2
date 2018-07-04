@@ -1,0 +1,15 @@
+- pyscf_dfmp2 [DF-MP2]
+  - redo imp.HF -> DF-MP2 directly
+    - if HF available on large molecule
+      project onto impurity, and re-diagonalize [give you canonical orbs -> DF-MP2]
+    
+- generate DMET fragments [dist. criterion]
+  - adjust DMET formula
+
+
+
+  - MB expansions
+  - alkane with 10000 bfs
+  - HF calc
+    - parallelize with MPI
+    - pseudospectral on cubic grid PS
