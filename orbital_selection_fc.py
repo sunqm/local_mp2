@@ -2,9 +2,10 @@ import numpy
 import pyscf
 from   pyscf       import gto,scf
 from   pyscf.tools import localizer
+from pyscf import lo
 from sys import path
-path.append('/home/yuliya/DMET/alkanechains_scf_ccsd/dmet_parallel_ccsdt_frozen/code')
-import dmet
+#path.append('/home/yuliya/DMET/alkanechains_scf_ccsd/dmet_parallel_ccsdt_frozen/code')
+from code import dmet
 
 #====================================================
 
@@ -68,8 +69,8 @@ def build_iAO_basis(mol,Cf,Cf_core,Cf_vale,nfreeze):
     loc          = localizer.localizer(mol,iao,'boys')
     loc.verbose  = 5
     iao_loc      = loc.optimize (threshold=1.0e-5)
-   # loc = lo.Boys(mol, iao).kernel()
-    #iao_loc = loc
+#    loc = lo.Boys(mol, iao).kernel()
+#    iao_loc = loc
     del loc
     # need to find occupied orbitals orthogonal to core
     if(Cf_core is not None):

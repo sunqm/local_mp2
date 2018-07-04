@@ -1,6 +1,7 @@
 from sys import path
-path.append('/home/yuliya/DMET/alkanechains_scf_ccsd/dmet_parallel_ccsdt_frozen')
-import orbital_selection_fcp1 as orb
+#path.append('/home/yuliya/DMET/alkanechains_scf_ccsd/dmet_parallel_ccsdt_frozen')
+#import orbital_selection_fcp1 as orb
+import orbital_selection_fc as orb
 import numpy,os
 from pyscf import gto,scf,cc,mp
 
@@ -34,7 +35,7 @@ fragments = [[0,2,3,4],[1,5,6,7]]
 fragment_spins = [1,-1]
 thresh   = 1.0e-8
 #method = 'cc' uncomment this line and comment the line below to switch to CC
-method   = 'cc'
+method   = 'mp2'#'cc'
 nfreeze  = 0
 parallel = False
 

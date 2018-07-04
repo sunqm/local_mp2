@@ -2,10 +2,10 @@ import numpy
 import pyscf
 from   pyscf       import gto,scf
 from   pyscf.tools import localizer
-
+from pyscf import lo
 from sys import path
-path.append('/home/mmotta/water_clusters/ethane_test/dmet_parallel_ccsdt_frozen/code')
-import dmet
+#path.append('/home/mmotta/water_clusters/ethane_test/dmet_parallel_ccsdt_frozen/code')
+from code import dmet
 
 #====================================================
 
@@ -71,6 +71,7 @@ def build_iAO_basis(mol,Cf,Cf_core,Cf_vale,nfreeze):
     loc.verbose  = 5
     iao_loc      = loc.optimize (threshold=1.0e-5)
     del loc
+#    iao_loc = lo.Boys(mol, iao).kernel()
     # need to find occupied orbitals orthogonal to core
     if(Cf_core is not None):
        Cf_x = project(Cf[:,:nup],S_f,Cf_core,'out')
